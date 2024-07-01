@@ -2,21 +2,16 @@ var express = require('express');
 var router = express.Router();
 
 const emailcollection = require('../models/userSchema');
-const { sendMail } = require("../utils/nodemailer");
+const { sendMail } = require("../utils/sendmail");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
+});+
+
+router.post('/send-mail', function (req, res, next) {
+
+  sendMail(req, res);
 });
-
-
-
-router.get('/sentmail', function (req, res, next) {
-  res.render('sentmail')
-})
-
-router.post('/sentmail', function (req, res, next) {
-  res.render('sentmail')
-})
 
 module.exports = router;

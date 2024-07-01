@@ -8,6 +8,6 @@ const userSchema = new mongoose.Schema({
 
 });
 
-const emailcollection = mongoose.model("email", userSchema);
+const emailcollection = mongoose.model("", userSchema);
 
 module.exports = emailcollection;
